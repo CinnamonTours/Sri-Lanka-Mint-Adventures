@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magiczna Sri Lanka - Oferta (2 Warianty)</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sriOrange: '#F28c00', 
+                        sriBrown: '#683C11',  
+                        sriBg: '#fcfaf8',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #fcfaf8; }
+        .timeline-dot {
+            position: absolute;
+            left: -33px;
+            top: 24px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #F28c00;
+            border: 3px solid #fcfaf8;
+            box-shadow: 0 0 0 2px #F28c00;
+            z-index: 10;
+        }
+        .timeline-line {
+            position: absolute;
+            left: -26px;
+            top: 40px;
+            bottom: -40px;
+            width: 2px;
+            background-color: rgba(242, 140, 0, 0.3);
+            z-index: 0;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(104, 60, 17, 0.7), rgba(104, 60, 17, 0.4)), url('https://images.unsplash.com/photo-1539617546058-a846c5fc36d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .tab-content { display: none; animation: fadeIn 0.5s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .pricing-table th { background-color: #683C11; color: white; border: 1px solid #8c521a; }
+        .pricing-table td { border: 1px solid #e5e7eb; vertical-align: middle; }
+        .pricing-table tr:nth-child(even) { background-color: #fff9f2; }
+        
+        .travel-time { display: block; font-size: 0.75rem; color: #8c521a; margin-top: 0.3rem; font-weight: 600; background: #fff4e6; padding: 4px 8px; border-radius: 6px; width: fit-content; }
+    </style>
+</head>
+<body class="text-gray-800 font-sans antialiased selection:bg-sriOrange selection:text-white pb-20">
+
+    <header class="hero-bg text-white py-24 md:py-32 px-6 shadow-xl relative overflow-hidden">
+        <div class="max-w-5xl mx-auto relative z-10 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-sriOrange text-white text-sm font-semibold tracking-wider mb-4 uppercase shadow-lg">
+                Oferta Rodzinna / Grupowa (13 Dni)
+            </span>
+            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-md">
+                Odkryj Sri Lankę
+            </h1>
+            <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto mb-8 text-gray-100">
+                Wybierz swój idealny wariant podróży: klasyczne zwiedzanie lub bliskość lankijskiej natury.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16 border-b border-gray-200 pb-4">
+            <button id="btn-classic" onclick="switchTab('classic')" class="px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-md bg-sriOrange text-white transform scale-105">
+                <i class="fas fa-map-marked-alt mr-2"></i> Classic Plan
+            </button>
+            <button id="btn-nature" onclick="switchTab('nature')" class="px-8 py-4 rounded-xl font-bold text-lg transition-all border border-gray-200 bg-white text-gray-600 hover:bg-orange-50 hover:text-sriOrange">
+                <i class="fas fa-leaf mr-2"></i> Nature Lovers
+            </button>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- WARIANT 1: CLASSIC PLAN -->
+        <!-- ============================================== -->
+        <div id="tab-classic" class="tab-content active">
+            
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-sriBrown mb-4">Classic Plan (13 Dni)</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Idealne połączenie najważniejszych zabytków, kultury i wypoczynku na pięknych plażach w Mirissie.</p>
+            </div>
+
+            <div class="space-y-10 relative ml-4 md:ml-8 pb-12">
+                <!-- DZIEŃ 1 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="timeline-dot"></div><div class="timeline-line"></div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                        <div class="bg-sriBrown text-white px-6 py-4 flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold">Dzień 1: Przylot</h3>
+                            <span class="text-sriOrange text-sm font-medium"><i class="fas fa-map-marker-alt mr-1"></i>Lotnisko &rarr; Negombo</span>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-2 space-y-3">
+                                <p class="font-bold text-sriBrown">Odbiór z lotniska</p>
+                                <p class="text-sm text-gray-700">Powitanie i krótki transfer do hotelu w Negombo. Czas na odpoczynek po podroży.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd z lotniska do hotelu: ok. 20 min</span>
+                                
+                                <div class="bg-orange-50 p-3 rounded-lg border border-orange-100 mt-2 inline-block w-full md:w-auto">
+                                    <p class="text-sm font-bold text-gray-800"><i class="fas fa-glass-cheers text-sriOrange mr-2"></i>19:00 - Kolacja Powitalna Boho (opcja)</p>
+                                    <p class="text-xs text-gray-600">Nie wliczona w cenę bazową.</p>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 text-sm">
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Zakwaterowanie</p>
+                                <p class="font-medium text-sriBrown mb-3"><i class="fas fa-hotel mr-2 text-sriOrange"></i>3R Rest by Blue Bird (lub podobny)</p>
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Wyżywienie</p>
+                                <p class="font-medium text-sriBrown"><i class="fas fa-utensils mr-2 text-sriOrange"></i>Śniadanie (BB)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DZIEŃ 2 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="timeline-dot"></div><div class="timeline-line"></div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                        <div class="bg-sriBrown text-white px-6 py-4 flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold">Dzień 2: Serce Kultury</h3>
+                            <span class="text-sriOrange text-sm font-medium"><i class="fas fa-map-marker-alt mr-1"></i>Negombo &rarr; Dambulla &rarr; Habarana</span>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-2 space-y-3">
+                                <p><strong class="text-sriOrange">09:00:</strong> Start z hotelu w Negombo.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd z Negombo do Dambulli: ok. 3 - 3.5h</span>
+                                
+                                <p><strong class="text-sriOrange">11:00:</strong> <strong>Świątynia w Skale (UNESCO)</strong> - Zjawiskowe jaskinie z posągami Buddy sprzed 2100 lat.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd do wioski: ok. 30 min</span>
+                                
+                                <p><strong class="text-sriOrange">14:00:</strong> <strong>Wizyta w wiosce i Lunch</strong> - Odkrywamy lankijską prowincję, co wieńczy tradycyjny lunch.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd do hotelu: ok. 15 min</span>
+                                
+                                <p><strong class="text-sriOrange">17:00:</strong> Zakwaterowanie w hotelu.</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 text-sm">
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Zakwaterowanie</p>
+                                <p class="font-medium text-sriBrown mb-3"><i class="fas fa-hotel mr-2 text-sriOrange"></i>Ambasewana Tree House & Resort (lub podobny)</p>
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Wyżywienie</p>
+                                <p class="font-medium text-sriBrown"><i class="fas fa-utensils mr-2 text-sriOrange"></i>Śniadanie (BB) + Lunch</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DZIEŃ 3 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="timeline-dot"></div><div class="timeline-line"></div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                        <div class="bg-sriBrown text-white px-6 py-4 flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold">Dzień 3: Starożytność i Lwia Skała</h3>
+                            <span class="text-sriOrange text-sm font-medium"><i class="fas fa-map-marker-alt mr-1"></i>Habarana &rarr; Polonnaruwa &rarr; Habarana</span>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-2 space-y-3">
+                                <p><strong class="text-sriOrange">09:00:</strong> Start z hotelu.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd z hotelu do ruin: ok. 1h</span>
+                                
+                                <p><strong class="text-sriOrange">09:30:</strong> <strong>Starożytne miasto Polonnaruwa (UNESCO)</strong> - Eksploracja dawnej stolicy Sri Lanki.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd na warsztaty: ok. 30 - 45 min</span>
+                                
+                                <p><strong class="text-sriOrange">12:30:</strong> <strong>Warsztaty (DIY)</strong> - Tworzenie glinianych naczyń i wyrobu tkanin.</p>
+                                <p><strong class="text-sriOrange">13:00:</strong> Lunch (we własnym zakresie).</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd z okolic Habarany pod Lwią Skałę: ok. 30 min</span>
+                                
+                                <p><strong class="text-sriOrange">15:30:</strong> <strong>Lwia Skała (UNESCO)</strong> - Przejażdżka tuk tukami pod kultową monolityczną twierdzę i wejście na szczyt.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Powrót do hotelu: ok. 30 min</span>
+                                
+                                <p><strong class="text-sriOrange">18:00:</strong> Powrót i zakwaterowanie.</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 text-sm">
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Zakwaterowanie</p>
+                                <p class="font-medium text-sriBrown mb-3"><i class="fas fa-hotel mr-2 text-sriOrange"></i>Ambasewana Tree House & Resort (lub podobny)</p>
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Wyżywienie</p>
+                                <p class="font-medium text-sriBrown"><i class="fas fa-utensils mr-2 text-sriOrange"></i>Śniadanie (BB)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DZIEŃ 4 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="timeline-dot"></div><div class="timeline-line"></div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                        <div class="bg-sriBrown text-white px-6 py-4 flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold">Dzień 4: Smaki i Tańce Kandy</h3>
+                            <span class="text-sriOrange text-sm font-medium"><i class="fas fa-map-marker-alt mr-1"></i>Habarana &rarr; Kandy</span>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-2 space-y-3">
+                                <p><strong class="text-sriOrange">08:30:</strong> Start.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd z Habarany do Matale: ok. 1.5h - 2h</span>
+                                
+                                <p><strong class="text-sriOrange">10:30:</strong> <strong>Ogród Przypraw</strong> - Spacer po pachnącym ogrodzie pełnym lankijskich przypraw.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd w stronę Kandy: ok. 1h</span>
+                                
+                                <p><strong class="text-sriOrange">13:00:</strong> Lunch (we własnym zakresie).</p>
+                                <p><strong class="text-sriOrange">15:00:</strong> <strong>Świątynia Zęba Buddy (UNESCO)</strong> - Najważniejsze miejsce lankijskiego buddyzmu.</p>
+                                <span class="travel-time"><i class="fas fa-walking mr-1 text-sriOrange"></i> Spacer / Krótki przejazd: ok. 10 min</span>
+                                
+                                <p><strong class="text-sriOrange">17:00:</strong> <strong>Pokaz Tradycyjnych Tańców</strong> - Spektakl taneczny z elementami tańca z ogniem.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd do hotelu: ok. 15 min</span>
+                                
+                                <p><strong class="text-sriOrange">19:00:</strong> Zakwaterowanie w hotelu.</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 text-sm">
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Zakwaterowanie</p>
+                                <p class="font-medium text-sriBrown mb-3"><i class="fas fa-hotel mr-2 text-sriOrange"></i>French Garden (lub podobny)</p>
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Wyżywienie</p>
+                                <p class="font-medium text-sriBrown"><i class="fas fa-utensils mr-2 text-sriOrange"></i>Śniadanie (BB)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DZIEŃ 5 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="timeline-dot"></div><div class="timeline-line"></div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                        <div class="bg-sriBrown text-white px-6 py-4 flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold">Dzień 5: Magia Herbaty i Pociąg</h3>
+                            <span class="text-sriOrange text-sm font-medium"><i class="fas fa-map-marker-alt mr-1"></i>Kandy &rarr; Ella</span>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-2 space-y-3">
+                                <p><strong class="text-sriOrange">08:30:</strong> Start z hotelu.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd na plantacje herbaty: ok. 1.5 - 2h</span>
+                                
+                                <p><strong class="text-sriOrange">10:00:</strong> <strong>Fabryka i Plantacja Herbaty</strong> - Zgłębienie sekretów uprawy słynnej "Ceylon Tea".</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd w stronę stacji / lunch: ok. 1h</span>
+                                
+                                <p><strong class="text-sriOrange">12:30:</strong> Lunch (we własnym zakresie).</p>
+                                
+                                
+                                <p><strong class="text-sriOrange">15:30:</strong> <strong>Przejazd Pociągiem (Nanu Oya/Badulla do Ella)</strong> - Najpiękniejsza trasa kolejowa wijąca się przez góry i mgliste wzgórza.</p>
+<span class="travel-time"><i class="fas fa-train mr-1 text-sriOrange"></i> Czas widokowej jazdy pociągiem: ok. 2.5 - 3h</span>                                
+<span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd ze stacji w Ella do hotelu: ok. 10 min</span>
+                                
+                                <p><strong class="text-sriOrange">19:00:</strong> Przyjazd i zakwaterowanie w hotelu.</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 text-sm">
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Zakwaterowanie</p>
+                                <p class="font-medium text-sriBrown mb-3"><i class="fas fa-hotel mr-2 text-sriOrange"></i>Crown Valley, Ella (lub podobny)</p>
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Wyżywienie</p>
+                                <p class="font-medium text-sriBrown"><i class="fas fa-utensils mr-2 text-sriOrange"></i>Śniadanie (BB)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DZIEŃ 6 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="timeline-dot"></div><div class="timeline-line"></div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                        <div class="bg-sriBrown text-white px-6 py-4 flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold">Dzień 6: Most, Gotowanie i Górskie Widoki</h3>
+                            <span class="text-sriOrange text-sm font-medium"><i class="fas fa-map-marker-alt mr-1"></i>Ella</span>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-2 space-y-3">
+                                <p><strong class="text-sriOrange">08:00:</strong> Start z hotelu w Elli.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd w okolice mostu: ok. 15 min</span>
+                                
+                                <p><strong class="text-sriOrange">08:30:</strong> <strong>Most Dziewięciu Łuków</strong> - Wcześnie rano odwiedzamy słynny, fotogeniczny wiadukt ukryty w dżungli.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd na miejsce warsztatów: ok. 15 min</span>
+                                
+                                <p><strong class="text-sriOrange">11:00:</strong> <strong>Lekcja Gotowania (Cooking Classes)</strong> - Interaktywne warsztaty kulinarne połączone ze zjedzeniem przygotowanych lankijskich potraw na lunch.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd do centrum: ok. 10 min</span>
+                                
+                                <p><strong class="text-sriOrange">14:00:</strong> <strong>Czas wolny w Ella</strong> - Relaks, kawa i eksploracja klimatycznego górskiego miasteczka.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd na początek szlaku: ok. 10 min</span>
+                                
+                                <p><strong class="text-sriOrange">16:30:</strong> <strong>Mały Szczyt Adama (Little Adam's Peak)</strong> - Popołudniowy, lekki trekking z piękną panoramą doliny przy zachodzącym słońcu.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Powrót do hotelu: ok. 15 min</span>
+                                
+                                <p><strong class="text-sriOrange">TBC:</strong> Powrót do hotelu.</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 text-sm">
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Zakwaterowanie</p>
+                                <p class="font-medium text-sriBrown mb-3"><i class="fas fa-hotel mr-2 text-sriOrange"></i>Crown Valley, Ella (lub podobny)</p>
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Wyżywienie</p>
+                                <p class="font-medium text-sriBrown"><i class="fas fa-utensils mr-2 text-sriOrange"></i>Śniadanie (BB) + Lunch z warsztatów</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DZIEŃ 7 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="timeline-dot"></div><div class="timeline-line"></div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                        <div class="bg-sriBrown text-white px-6 py-4 flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold">Dzień 7: Wodospady i Dzikie Safari</h3>
+                            <span class="text-sriOrange text-sm font-medium"><i class="fas fa-map-marker-alt mr-1"></i>Ella &rarr; Yala</span>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-2 space-y-3">
+                                <p><strong class="text-sriOrange">08:30:</strong> Start.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd do wodospadu: ok. 15 min</span>
+                                
+                                <p><strong class="text-sriOrange">09:00:</strong> <strong>Wodospad Ravana</strong> - Przystanek na pamiątkowe zdjęcia przy wielkiej kaskadzie.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd w rejon Yala: ok. 2h</span>
+                                
+                                <p><strong class="text-sriOrange">12:30:</strong> Lunch przed wyjazdem na sawannę (we własnym zakresie).</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd pod park: ok. 30 min</span>
+                                
+                                <p><strong class="text-sriOrange">14:00:</strong> <strong>Safari w Parku Narodowym Yala</strong> - 3-godzinne safari terenowymi jeepami w poszukiwaniu lampartów i słoni.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd do hotelu po safari: ok. 30 - 45 min</span>
+                                
+                                <p><strong class="text-sriOrange">18:30/19:00:</strong> Zakwaterowanie po emocjonującym dniu.</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 text-sm">
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Zakwaterowanie</p>
+                                <p class="font-medium text-sriBrown mb-3"><i class="fas fa-hotel mr-2 text-sriOrange"></i>Safron Lake (lub podobny)</p>
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Wyżywienie</p>
+                                <p class="font-medium text-sriBrown"><i class="fas fa-utensils mr-2 text-sriOrange"></i>Śniadanie (BB)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DNI 8-11 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="timeline-dot"></div><div class="timeline-line"></div>
+                    <div class="bg-orange-50 rounded-2xl shadow-sm border border-orange-100 overflow-hidden group">
+                        <div class="bg-sriOrange text-white px-6 py-4 flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold">Dni 8, 9, 10 i 11: Plażowy Raj</h3>
+                            <span class="text-white text-sm font-medium"><i class="fas fa-umbrella-beach mr-1"></i>Yala &rarr; Mirissa</span>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-2 space-y-3">
+                                <p><strong class="text-sriBrown">Dzień 8:</strong> Przejazd na południowe wybrzeże, zakwaterowanie w nadmorskim miasteczku Mirissa.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Czas przejazdu z okolic Yala do Mirissy: ok. 2.5 - 3h</span>
+                                
+                                <p><strong class="text-sriBrown">Dni 9, 10, 11:</strong> <strong>Czas wolny (Rest)</strong></p>
+                                <p class="text-sm text-gray-700">Dni całkowicie przeznaczone na beztroski wypoczynek. Szum oceanu, cień palm, świetne restauracje i złoty piasek – ładujemy baterie w jednym z najpiękniejszych resortów na wyspie.</p>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 border border-orange-200 text-sm shadow-sm">
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Zakwaterowanie (4 noce)</p>
+                                <p class="font-medium text-sriBrown mb-3"><i class="fas fa-hotel mr-2 text-sriOrange"></i>Somerset Blue, Mirissa (lub podobny)</p>
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Wyżywienie</p>
+                                <p class="font-medium text-sriBrown"><i class="fas fa-utensils mr-2 text-sriOrange"></i>Śniadania (BB)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DZIEŃ 12 & 13 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                        <div class="bg-sriBrown text-white px-6 py-4 flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold">Dzień 12 i 13: Zakończenie Przygody</h3>
+                            <span class="text-sriOrange text-sm font-medium"><i class="fas fa-plane-departure mr-1"></i>Mirissa &rarr; Lotnisko</span>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-2 space-y-4">
+                                <div>
+                                    <p class="font-bold text-sriBrown">Dzień 12: Mirissa &rarr; Katunayake</p>
+                                    <p class="text-sm text-gray-700">Ostatnie chwile na plaży, a następnie przejazd bliżej lotniska, do miejscowości Katunayake na nocleg przed wylotem.</p>
+                                    <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd autostradą z Mirissy do Katunayake: ok. 2.5h</span>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-sriBrown">Dzień 13: Lot do domu</p>
+                                    <p class="text-sm text-gray-700">Krótki poranny transfer z hotelu w Katunayake bezpośrednio na lotnisko. Lot powrotny i pożegnanie z wyspą.</p>
+                                    <span class="travel-time"><i class="fas fa-car mr-1 text-sriOrange"></i> Przejazd na terminal: ok. 15 min</span>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 text-sm">
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Zakwaterowanie</p>
+                                <p class="font-medium text-sriBrown mb-3"><i class="fas fa-hotel mr-2 text-sriOrange"></i>Lucky Transit Hotel (lub podobny)</p>
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Wyżywienie</p>
+                                <p class="font-medium text-sriBrown"><i class="fas fa-utensils mr-2 text-sriOrange"></i>Śniadanie (BB)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CENNIK CLASSIC PLAN -->
+            <section class="mt-16">
+                <div class="text-center mb-8">
+                    <h2 class="font-serif text-3xl font-bold text-sriBrown mb-2">Cennik - Classic Plan</h2>
+                    <p class="text-gray-500">(ceny za osobę)</p>
+                    <div class="w-16 h-1 bg-sriOrange mx-auto rounded-full mt-2"></div>
+                </div>
+                
+                <div class="overflow-x-auto bg-white rounded-2xl shadow-lg border border-gray-100 p-2">
+                    <table class="w-full text-center pricing-table text-sm md:text-base">
+                        <thead>
+                            <tr>
+                                <th rowspan="2" class="p-3 bg-sriBrown rounded-tl-xl border-b-0 border-r-0">Struktura</th>
+                                <th colspan="3" class="p-3 bg-[#8c521a]">Grupa 10-15 pax</th>
+                                <th colspan="3" class="p-3 bg-sriBrown rounded-tr-xl">Grupa 16-20 pax</th>
+                            </tr>
+                            <tr>
+                                <th class="p-2 bg-[#A06322] font-medium text-white border-x border-[#8c521a]">Dorośli (Adult)</th>
+                                <th class="p-2 bg-[#A06322] font-medium text-white border-x border-[#8c521a]">Dziecko (Child)</th>
+                                <th class="p-2 bg-[#A06322] font-medium text-white border-x border-[#8c521a]">Dziecko (Kid)</th>
+                                <th class="p-2 bg-[#7D4814] font-medium text-white border-x border-[#683C11]">Dorośli (Adult)</th>
+                                <th class="p-2 bg-[#7D4814] font-medium text-white border-x border-[#683C11]">Dziecko (Child)</th>
+                                <th class="p-2 bg-[#7D4814] font-medium text-white border-x border-[#683C11]">Dziecko (Kid)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-700 font-medium">
+                            <tr>
+                                <td class="p-3 text-left font-bold text-sriBrown">Rodzina 2 osób</td>
+                                <td class="p-3 text-sriOrange font-bold">1 250 $ / os.</td><td class="p-3">1 125 $ / os.</td><td class="p-3">450 $ / os.</td>
+                                <td class="p-3 text-sriOrange font-bold">1 200 $ / os.</td><td class="p-3">1 075 $ / os.</td><td class="p-3">450 $ / os.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-left font-bold text-sriBrown">Rodzina 3 osób</td>
+                                <td class="p-3 text-sriOrange font-bold">1 190 $ / os.</td><td class="p-3">1 065 $ / os.</td><td class="p-3">450 $ / os.</td>
+                                <td class="p-3 text-sriOrange font-bold">1 150 $ / os.</td><td class="p-3">1 025 $ / os.</td><td class="p-3">450 $ / os.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-left font-bold text-sriBrown">Rodzina 4 osób</td>
+                                <td class="p-3 text-sriOrange font-bold">1 090 $ / os.</td><td class="p-3">965 $ / os.</td><td class="p-3">450 $ / os.</td>
+                                <td class="p-3 text-sriOrange font-bold">1 050 $ / os.</td><td class="p-3">925 $ / os.</td><td class="p-3">450 $ / os.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-left font-bold text-sriBrown">Rodzina 5 osób</td>
+                                <td class="p-3 text-sriOrange font-bold">990 $ / os.</td><td class="p-3">865 $ / os.</td><td class="p-3">450 $ / os.</td>
+                                <td class="p-3 text-sriOrange font-bold">950 $ / os.</td><td class="p-3">825 $ / os.</td><td class="p-3">450 $ / os.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- CLASSIC Wliczone / Niewliczone -->
+            <section class="mt-20 bg-white rounded-3xl shadow-lg p-8 md:p-12 border border-gray-100">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="font-serif text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i> Cena zawiera:
+                        </h3>
+                        <ul class="space-y-4 text-sm md:text-base">
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span class="text-gray-700"><strong>Zakwaterowanie w hotelach ze śniadaniami</strong> (Wyżywienie BB). Pokoje 2-, 3-, 4- lub 5-osobowe w miarę możliwości (czasem 5-osobowy pokój będzie rozdzielony na 2- i 3-osobowy obok siebie). Dodatkowo w cenie zawarty jest lunch podczas Wizyty w wiosce (Village Tour) oraz Lekcji gotowania.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span class="text-gray-700"><strong>Transfery</strong> z lotniska i na lotnisko.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span class="text-gray-700"><strong>Transport wygodnym busem</strong>, paliwo, opłaty za autostrady i parkingi na całej trasie.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span class="text-gray-700">Opieka <strong>lokalnego doświadczonego kierowcy</strong>.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span class="text-gray-700">Opieka <strong>lokalnego licencjonowanego, narodowego przewodnika</strong>.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span class="text-gray-700"><strong>Wejścia do wszystkich wymienionych atrakcji</strong> w programie.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span class="text-gray-700"><strong>Nielimitowana woda w butelkach</strong> do picia podczas objazdówki.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span class="text-gray-700">Wliczony <strong>1 FOC Tour Leader z Mint Adventures</strong> (hotele, transport, atrakcje za darmo).</span></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="font-serif text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-times-circle text-gray-400 mr-3"></i> Cena nie zawiera:
+                        </h3>
+                        <ul class="space-y-4 text-sm md:text-base">
+                            <li class="flex items-start"><i class="fas fa-minus text-gray-400 mt-1 mr-3"></i><span class="text-gray-600">Międzynarodowe <strong>bilety lotnicze</strong>.</span></li>
+                            <li class="flex items-start"><i class="fas fa-minus text-gray-400 mt-1 mr-3"></i><span class="text-gray-600"><strong>Ubezpieczenie</strong> turystyczne i zdrowotne.</span></li>
+                            <li class="flex items-start"><i class="fas fa-minus text-gray-400 mt-1 mr-3"></i><span class="text-gray-600"><strong>Wszystkie pozostałe lunche i obiadokolacje</strong> (wyżywienie opiera się na śniadaniach). Kolacja powitalna Boho również nie jest wliczona w cenę.</span></li>
+                            <li class="flex items-start"><i class="fas fa-minus text-gray-400 mt-1 mr-3"></i><span class="text-gray-600"><strong>Pamiątki</strong> i wydatki natury osobistej.</span></li>
+                            <li class="flex items-start"><i class="fas fa-minus text-gray-400 mt-1 mr-3"></i><span class="text-gray-600">Napiwki dla kierowcy i przewodnika.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ============================================== -->
+        <!-- WARIANT 2: NATURE LOVERS PLAN -->
+        <!-- ============================================== -->
+        <div id="tab-nature" class="tab-content">
+            
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-green-800 mb-4">Nature Lovers Plan (13 Dni)</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Skupiony na potędze natury, parkach narodowych, warsztatach botanicznych i głębszym kontakcie z lokalną fauną i florą.</p>
+            </div>
+
+            <div class="space-y-10 relative ml-4 md:ml-8 pb-12">
+                <!-- DZIEŃ 1 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="timeline-dot bg-green-600 border-white shadow-[0_0_0_2px_#16a34a]"></div><div class="timeline-line bg-green-200"></div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                        <div class="bg-green-800 text-white px-6 py-4 flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold">Dzień 1: Przylot</h3>
+                            <span class="text-green-300 text-sm font-medium"><i class="fas fa-map-marker-alt mr-1"></i>Airport &rarr; Negombo</span>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-2 space-y-3">
+                                <p class="font-bold text-green-800">Odbiór z lotniska</p>
+                                <p class="text-sm text-gray-700">Krótki transfer do hotelu w Negombo. Czas na odpoczynek i aklimatyzację w tropikach.
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd z lotniska: ok. 20 min</span></p>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 text-sm">
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Zakwaterowanie</p>
+                                <p class="font-medium text-green-800 mb-3"><i class="fas fa-hotel mr-2 text-green-600"></i>3R Rest by Blue Bird (lub podobny)</p>
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Wyżywienie</p>
+                                <p class="font-medium text-green-800"><i class="fas fa-utensils mr-2 text-green-600"></i>Śniadanie (BB)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DZIEŃ 2 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="timeline-dot bg-green-600 border-white shadow-[0_0_0_2px_#16a34a]"></div><div class="timeline-line bg-green-200"></div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                        <div class="bg-green-800 text-white px-6 py-4 flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold">Dzień 2: Zioła, Jaskinie i Zachód Słońca</h3>
+                            <span class="text-green-300 text-sm font-medium"><i class="fas fa-map-marker-alt mr-1"></i>Negombo &rarr; Dambulla &rarr; Habarana</span>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-2 space-y-3">
+                                <p><strong class="text-green-600">08:00:</strong> Start z hotelu.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd z Negombo: ok. 3 - 3.5h</span>
+                                
+                                <p><strong class="text-green-600">10:00:</strong> <strong>Przerwa na herbatę</strong> - Krótka regeneracja na lokalną herbatę w trasie.</p>
+                                <p><strong class="text-green-600">12:30:</strong> <strong>Świątynia w Skale (UNESCO)</strong> - Świątynia sprzed ponad 2100 lat.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd do wioski: ok. 30 min</span>
+                                
+                                <p><strong class="text-green-600">14:30:</strong> <strong>Wizyta w wiosce i Lunch</strong> - Odkrywanie prowincji lankijskiej zwieńczone domowym lunchem.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd z wioski pod Skałę: ok. 30 min</span>
+                                
+                                <p><strong class="text-green-600">16:00:</strong> <strong>Lwia Skała (UNESCO)</strong> - Wejście na słynną skałę w Sigiriyi i widok na dżunglę o zachodzie słońca.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd do hotelu: ok. 30 min</span>
+                                
+                                <p><strong class="text-green-600">19:00:</strong> Zakwaterowanie.</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 text-sm">
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Zakwaterowanie</p>
+                                <p class="font-medium text-green-800 mb-3"><i class="fas fa-hotel mr-2 text-green-600"></i>Ambasewana Tree House & Resort (lub podobny)</p>
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Wyżywienie</p>
+                                <p class="font-medium text-green-800"><i class="fas fa-utensils mr-2 text-green-600"></i>Śniadanie (BB) + Lunch</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DZIEŃ 3 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="timeline-dot bg-green-600 border-white shadow-[0_0_0_2px_#16a34a]"></div><div class="timeline-line bg-green-200"></div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                        <div class="bg-green-800 text-white px-6 py-4 flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold">Dzień 3: Ruiny i Największy Park Narodowy</h3>
+                            <span class="text-green-300 text-sm font-medium"><i class="fas fa-map-marker-alt mr-1"></i>Habarana &rarr; Anuradhapura &rarr; Habarana</span>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-2 space-y-3">
+                                <p><strong class="text-green-600">08:30:</strong> Start.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd z hotelu: ok. 1.5h</span>
+                                
+                                <p><strong class="text-green-600">10:30:</strong> <strong>Starożytne miasto Anuradhapura (UNESCO)</strong> - Rozległe ruiny pierwszej stolicy Sri Lanki.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd do lokalnej knajpki: ok. 45 min</span>
+                                
+                                <p><strong class="text-green-600">12:30:</strong> <strong>Lunch w Hela Bojun Hala</strong> - Street food (we własnym zakresie).</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd do parku: ok. 30 min</span>
+                                
+                                <p><strong class="text-green-600">15:30:</strong> <strong>Safari w Parku Narodowym Wilpattu</strong>.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Powrót do hotelu: ok. 1.5 - 2h</span>
+                                
+                                <p><strong class="text-green-600">19:30:</strong> Powrót do hotelu.</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 text-sm">
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Zakwaterowanie</p>
+                                <p class="font-medium text-green-800 mb-3"><i class="fas fa-hotel mr-2 text-green-600"></i>Ambasewana Tree House & Resort (lub podobny)</p>
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Wyżywienie</p>
+                                <p class="font-medium text-green-800"><i class="fas fa-utensils mr-2 text-green-600"></i>Śniadanie (BB)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DZIEŃ 4 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="timeline-dot bg-green-600 border-white shadow-[0_0_0_2px_#16a34a]"></div><div class="timeline-line bg-green-200"></div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                        <div class="bg-green-800 text-white px-6 py-4 flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold">Dzień 4: Botanika i Duchowość Kandy</h3>
+                            <span class="text-green-300 text-sm font-medium"><i class="fas fa-map-marker-alt mr-1"></i>Habarana &rarr; Kandy</span>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-2 space-y-3">
+                                <p><strong class="text-green-600">09:00:</strong> Start.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd z Habarany: ok. 1.5h</span>
+                                
+                                <p><strong class="text-green-600">10:30:</strong> <strong>Ogród Ziołowy (Ajurwedyjski)</strong> - Wizyta w bogatym ogrodzie roślin leczniczych i przyprawowych.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd do centrum Kandy: ok. 1h</span>
+                                
+                                <p><strong class="text-green-600">13:00:</strong> Lunch (we własnym zakresie).</p>
+                                <p><strong class="text-green-600">14:30:</strong> <strong>Świątynia Zęba Buddy (UNESCO)</strong> - Serce lankijskiego buddyzmu w Kandy.</p>
+                                
+                                <div class="bg-orange-50 p-3 rounded-lg border border-orange-100 mt-2 inline-block">
+                                    <p class="text-sm font-bold text-gray-800"><i class="fas fa-spa text-sriOrange mr-2"></i>16:30 - Masaż</p>
+                                    <p class="text-xs text-gray-600">Opcjonalny masaż ajurwedyjski (płatny dodatkowo).</p>
+                                </div>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd do hotelu: ok. 15 min</span>
+                                
+                                <p><strong class="text-green-600">19:30:</strong> Zakwaterowanie w hotelu.</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 text-sm">
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Zakwaterowanie</p>
+                                <p class="font-medium text-green-800 mb-3"><i class="fas fa-hotel mr-2 text-green-600"></i>French Garden (lub podobny)</p>
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Wyżywienie</p>
+                                <p class="font-medium text-green-800"><i class="fas fa-utensils mr-2 text-green-600"></i>Śniadanie (BB)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DZIEŃ 5 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="timeline-dot bg-green-600 border-white shadow-[0_0_0_2px_#16a34a]"></div><div class="timeline-line bg-green-200"></div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                        <div class="bg-green-800 text-white px-6 py-4 flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold">Dzień 5: "Mała Anglia" i Góry</h3>
+                            <span class="text-green-300 text-sm font-medium"><i class="fas fa-map-marker-alt mr-1"></i>Kandy &rarr; Nuwara Eliya</span>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-2 space-y-3">
+                                <p><strong class="text-green-600">08:30:</strong> Start.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd w góry z Kandy: ok. 2.5h</span>
+                                
+                                <p><strong class="text-green-600">10:30:</strong> <strong>Fabryka i Plantacja Herbaty</strong> - Zwiedzanie plantacji zlokalizowanych w chłodniejszych partiach gór.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd do centrum: ok. 30 min</span>
+                                
+                                <p><strong class="text-green-600">13:00:</strong> Lunch (we własnym zakresie).</p>
+                                <p><strong class="text-green-600">14:30:</strong> <strong>Świątynia Seetha Amman</strong> - Barwna hinduska świątynia powiązana z eposem Ramajana.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd: ok. 15 min</span>
+                                
+                                <p><strong class="text-green-600">15:30:</strong> <strong>Zabytkowa Poczta</strong> - Budynek poczty w Nuwara Eliya, perła brytyjskiej architektury kolonialnej.</p>
+                                <p><strong class="text-green-600">16:00:</strong> <strong>Targ Owocowy</strong> - Spacer po kolorowym targu z lokalnymi zbiorami.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd do hotelu: ok. 10 min</span>
+                                
+                                <p><strong class="text-green-600">18:00:</strong> Zakwaterowanie.</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 text-sm">
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Zakwaterowanie</p>
+                                <p class="font-medium text-green-800 mb-3"><i class="fas fa-hotel mr-2 text-green-600"></i>Fort Windshire (lub podobny)</p>
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Wyżywienie</p>
+                                <p class="font-medium text-green-800"><i class="fas fa-utensils mr-2 text-green-600"></i>Śniadanie (BB)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DZIEŃ 6 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="timeline-dot bg-green-600 border-white shadow-[0_0_0_2px_#16a34a]"></div><div class="timeline-line bg-green-200"></div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                        <div class="bg-green-800 text-white px-6 py-4 flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold">Dzień 6: Mgliste Równiny i Podróż Pociągiem</h3>
+                            <span class="text-green-300 text-sm font-medium"><i class="fas fa-map-marker-alt mr-1"></i>Nuwara Eliya &rarr; Ella</span>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-2 space-y-3">
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd na szlak: ok. 1h</span>
+                                <p><strong class="text-green-600">09:00:</strong> <strong>Równiny Hortona (UNESCO)</strong> - Trekking po rezerwacie ("Koniec Świata").</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd w stronę stacji: ok. 45 min</span>
+                                
+                                <p><strong class="text-green-600">13:30:</strong> Lunch (we własnym zakresie).</p>
+                                <p><strong class="text-green-600">15:30:</strong> <strong>Przejazd Pociągiem (Nanu Oya/Badulla - Ella)</strong>.</p>
+                                <span class="travel-time"><i class="fas fa-train mr-1 text-green-600"></i> Czas widokowej jazdy pociągiem: ok. 2.5 - 3h</span>
+                                
+                                <p><strong class="text-green-600">18:30:</strong> Zakwaterowanie w Ella.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd ze stacji: ok. 10 min</span>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 text-sm">
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Zakwaterowanie</p>
+                                <p class="font-medium text-green-800 mb-3"><i class="fas fa-hotel mr-2 text-green-600"></i>Crown Valley, Ella (lub podobny)</p>
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Wyżywienie</p>
+                                <p class="font-medium text-green-800"><i class="fas fa-utensils mr-2 text-green-600"></i>Śniadanie (BB)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DZIEŃ 7 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="timeline-dot bg-green-600 border-white shadow-[0_0_0_2px_#16a34a]"></div><div class="timeline-line bg-green-200"></div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                        <div class="bg-green-800 text-white px-6 py-4 flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold">Dzień 7: Most w Dżungli i Kurs Gotowania</h3>
+                            <span class="text-green-300 text-sm font-medium"><i class="fas fa-map-marker-alt mr-1"></i>Ella &rarr; Tangalle</span>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-2 space-y-3">
+                                <p><strong class="text-green-600">09:00:</strong> Start.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd do mostu: ok. 15 min</span>
+                                
+                                <p><strong class="text-green-600">09:30:</strong> <strong>Most Dziewięciu Łuków</strong> - Magiczny, kamienny wiadukt ukryty w gęstej, tropikalnej roślinności.</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd na miejsce warsztatów: ok. 15 min</span>
+                                
+                                <p><strong class="text-green-600">11:00:</strong> <strong>Lekcja Gotowania</strong> - Przygotowywanie organicznych, lankijskich potraw na specjalnych warsztatach w otoczeniu natury.</p>
+                                <p><strong class="text-green-600">13:30:</strong> Lunch (degustacja zrobionych potraw).</p>
+                                <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd na wybrzeże południowe: ok. 2.5 - 3h</span>
+                                
+                                <p><strong class="text-green-600">16:30:</strong> Zakwaterowanie w nadmorskim Tangalle.</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 text-sm">
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Zakwaterowanie</p>
+                                <p class="font-medium text-green-800 mb-3"><i class="fas fa-hotel mr-2 text-green-600"></i>Palm Paradize, Tangalle (lub podobny)</p>
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Wyżywienie</p>
+                                <p class="font-medium text-green-800"><i class="fas fa-utensils mr-2 text-green-600"></i>Śniadanie (BB) + Lunch</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DNI 8-11 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="timeline-dot bg-green-600 border-white shadow-[0_0_0_2px_#16a34a]"></div><div class="timeline-line bg-green-200"></div>
+                    <div class="bg-green-50 rounded-2xl shadow-sm border border-green-100 overflow-hidden group">
+                        <div class="bg-green-600 text-white px-6 py-4 flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold">Dni 8, 9, 10 i 11: Złote Plaże Południa</h3>
+                            <span class="text-white text-sm font-medium"><i class="fas fa-umbrella-beach mr-1"></i>Tangalle</span>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-2 space-y-3">
+                                <p><strong class="text-green-800">Czas wolny</strong> przez całe cztery dni.</p>
+                                <p class="text-sm text-gray-700">Tangalle słynie z dzikich i naturalnych plaż. To idealne miejsce na wyciszenie, wsłuchiwanie się w szum fal, podziwianie tropikalnych zachodów słońca i szansę na zobaczenie żółwi morskich.</p>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 border border-green-200 text-sm shadow-sm">
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Zakwaterowanie (4 noce)</p>
+                                <p class="font-medium text-green-800 mb-3"><i class="fas fa-hotel mr-2 text-green-600"></i>Palm Paradize, Tangalle</p>
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Wyżywienie</p>
+                                <p class="font-medium text-green-800"><i class="fas fa-utensils mr-2 text-green-600"></i>Śniadania (BB)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DZIEŃ 12 & 13 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="timeline-dot bg-green-600 border-white shadow-[0_0_0_2px_#16a34a]"></div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                        <div class="bg-green-800 text-white px-6 py-4 flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-bold">Dzień 12 i 13: Powrót</h3>
+                            <span class="text-green-300 text-sm font-medium"><i class="fas fa-plane-departure mr-1"></i>Tangalle &rarr; Lotnisko</span>
+                        </div>
+                        <div class="p-6 grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-2 space-y-4">
+                                <div>
+                                    <p class="font-bold text-green-800">Dzień 12: Tangalle &rarr; Katunayake</p>
+                                    <p class="text-sm text-gray-700">Przejazd do Katunayake na ostatnią noc.</p>
+                                    <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd autostradą z Tangalle: ok. 3h</span>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-green-800">Dzień 13: Lot do domu</p>
+                                    <p class="text-sm text-gray-700">Wylot (Transfer na lotnisko).</p>
+                                    <span class="travel-time"><i class="fas fa-car mr-1 text-green-600"></i> Przejazd na lotnisko: ok. 15 min</span>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 text-sm">
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Zakwaterowanie</p>
+                                <p class="font-medium text-green-800 mb-3"><i class="fas fa-hotel mr-2 text-green-600"></i>Lucky Transit hotel (lub podobny)</p>
+                                <p class="font-bold text-gray-500 mb-1 uppercase text-xs">Wyżywienie</p>
+                                <p class="font-medium text-green-800"><i class="fas fa-utensils mr-2 text-green-600"></i>Śniadanie (BB)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CENNIK NATURE LOVERS -->
+            <section class="mt-16">
+                <div class="text-center mb-8">
+                    <h2 class="font-serif text-3xl font-bold text-green-800 mb-2">Cennik - Nature Lovers Plan</h2>
+                    <p class="text-gray-500">(ceny za osobę)</p>
+                    <div class="w-16 h-1 bg-green-600 mx-auto rounded-full mt-2"></div>
+                </div>
+                
+                <div class="overflow-x-auto bg-white rounded-2xl shadow-lg border border-gray-100 p-2">
+                    <table class="w-full text-center pricing-table text-sm md:text-base">
+                        <thead>
+                            <tr>
+                                <th rowspan="2" class="p-3 bg-green-800 rounded-tl-xl border-b-0 border-r-0">Struktura</th>
+                                <th colspan="3" class="p-3 bg-green-700 border-x border-green-800">Grupa 10-15 pax (Cena za osobę)</th>
+                                <th colspan="3" class="p-3 bg-green-800 rounded-tr-xl">Grupa 16-20 pax (Cena za osobę)</th>
+                            </tr>
+                            <tr>
+                                <th class="p-2 bg-[#15803d] font-medium text-white border-x border-green-700">Dorośli (Adult)</th>
+                                <th class="p-2 bg-[#15803d] font-medium text-white border-x border-green-700">Dziecko (Child)</th>
+                                <th class="p-2 bg-[#15803d] font-medium text-white border-x border-green-700">Dziecko (Kid)</th>
+                                <th class="p-2 bg-[#14532d] font-medium text-white border-x border-green-900">Dorośli (Adult)</th>
+                                <th class="p-2 bg-[#14532d] font-medium text-white border-x border-green-900">Dziecko (Child)</th>
+                                <th class="p-2 bg-[#14532d] font-medium text-white border-x border-green-900">Dziecko (Kid)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-700 font-medium">
+                            <tr>
+                                <td class="p-3 text-left font-bold text-green-800">Rodzina 2 osób</td>
+                                <td class="p-3 text-green-600 font-bold">1 290 $/ os.</td><td class="p-3">1 165$ / os.</td><td class="p-3">475 $ / os.</td>
+                                <td class="p-3 text-green-600 font-bold">1 250 $/ os.</td><td class="p-3">1 125$ / os.</td><td class="p-3">475 $ / os.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-left font-bold text-green-800">Rodzina 3 osób</td>
+                                <td class="p-3 text-green-600 font-bold">1 250 $/ os.</td><td class="p-3">1 125$ / os.</td><td class="p-3">475 $ / os.</td>
+                                <td class="p-3 text-green-600 font-bold">1 190 $/ os.</td><td class="p-3">1 065$ / os.</td><td class="p-3">475 $ / os.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-left font-bold text-green-800">Rodzina 4 osób</td>
+                                <td class="p-3 text-green-600 font-bold">1 150 $/ os.</td><td class="p-3">1 025$ / os.</td><td class="p-3">475 $ / os.</td>
+                                <td class="p-3 text-green-600 font-bold">1 090 $/ os.</td><td class="p-3">965$ / os.</td><td class="p-3">475 $ / os.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-left font-bold text-green-800">Rodzina 5 osób</td>
+                                <td class="p-3 text-green-600 font-bold">1 050 $/ os.</td><td class="p-3">925$ / os.</td><td class="p-3">475 $ / os.</td>
+                                <td class="p-3 text-green-600 font-bold">990 $/ os.</td><td class="p-3">865$ / os.</td><td class="p-3">475 $ / os.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- NATURE Wliczone / Niewliczone -->
+            <section class="mt-20 bg-white rounded-3xl shadow-lg p-8 md:p-12 border border-gray-100">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="font-serif text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i> Cena zawiera:
+                        </h3>
+                        <ul class="space-y-4 text-sm md:text-base">
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span class="text-gray-700"><strong>Zakwaterowanie w hotelach ze śniadaniami</strong> (Wyżywienie BB). Pokoje 2-, 3-, 4- lub 5-osobowe w miarę możliwości (czasem 5-osobowy pokój będzie rozdzielony na 2- i 3-osobowy obok siebie). Dodatkowo w cenie zawarty jest lunch podczas Wizyty w wiosce (Village Tour) oraz Lekcji gotowania.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span class="text-gray-700"><strong>Transfery</strong> z lotniska i na lotnisko.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span class="text-gray-700"><strong>Transport wygodnym busem</strong>, paliwo, opłaty za autostrady i parkingi na całej trasie.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span class="text-gray-700">Opieka <strong>lokalnego doświadczonego kierowcy</strong>.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span class="text-gray-700">Opieka <strong>lokalnego licencjonowanego, narodowego przewodnika</strong>.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span class="text-gray-700"><strong>Wejścia do wszystkich wymienionych atrakcji</strong> w programie (oprócz masażu ajurwedyjskiego).</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span class="text-gray-700"><strong>Nielimitowana woda w butelkach</strong> do picia podczas objazdówki.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-3"></i><span class="text-gray-700">Wliczony <strong>1 FOC Tour Leader z Mint Adventures</strong> (hotele, transport, atrakcje za darmo).</span></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="font-serif text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-times-circle text-gray-400 mr-3"></i> Cena nie zawiera:
+                        </h3>
+                        <ul class="space-y-4 text-sm md:text-base">
+                            <li class="flex items-start"><i class="fas fa-minus text-gray-400 mt-1 mr-3"></i><span class="text-gray-600">Międzynarodowe <strong>bilety lotnicze</strong>.</span></li>
+                            <li class="flex items-start"><i class="fas fa-minus text-gray-400 mt-1 mr-3"></i><span class="text-gray-600"><strong>Ubezpieczenie</strong> turystyczne i zdrowotne.</span></li>
+                            <li class="flex items-start"><i class="fas fa-minus text-gray-400 mt-1 mr-3"></i><span class="text-gray-600"><strong>Wszystkie pozostałe lunche i obiadokolacje</strong> (wyżywienie opiera się na śniadaniach).</span></li>
+                            <li class="flex items-start"><i class="fas fa-minus text-gray-400 mt-1 mr-3"></i><span class="text-gray-600">Masaż ajurwedyjski (dostępny za dodatkową opłatą w planie Nature Lovers).</span></li>
+                            <li class="flex items-start"><i class="fas fa-minus text-gray-400 mt-1 mr-3"></i><span class="text-gray-600"><strong>Pamiątki</strong> i wydatki natury osobistej.</span></li>
+                            <li class="flex items-start"><i class="fas fa-minus text-gray-400 mt-1 mr-3"></i><span class="text-gray-600">Napiwki dla kierowcy i przewodnika.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-sriBrown text-white text-center py-10 mt-12 border-t-4 border-sriOrange">
+        <div class="max-w-4xl mx-auto px-6">
+            <h4 class="font-serif text-2xl mb-4 text-sriOrange">Gotowi na Wyprawę Marzeń?</h4>
+            <p class="text-gray-300 mb-6">Wybierz wariant najlepiej dopasowany do Twojej grupy i stwórz z nami niesamowite wspomnienia ze Sri Lanki.</p>
+            <a href="mailto:lila@thecinnamontours.com" class="inline-block bg-sriOrange hover:bg-orange-600 transition-colors text-white font-bold py-3 px-8 rounded-full shadow-lg">
+                Skontaktuj się z lila@thecinnamontours.com
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            
+            document.getElementById('btn-classic').className = "px-8 py-4 rounded-xl font-bold text-lg transition-all border border-gray-200 bg-white text-gray-600 hover:bg-orange-50 hover:text-sriOrange";
+            document.getElementById('btn-nature').className = "px-8 py-4 rounded-xl font-bold text-lg transition-all border border-gray-200 bg-white text-gray-600 hover:bg-green-50 hover:text-green-700";
+
+            if(tabId === 'classic') {
+                document.getElementById('tab-classic').classList.add('active');
+                document.getElementById('btn-classic').className = "px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-md bg-sriOrange text-white transform scale-105";
+            } else {
+                document.getElementById('tab-nature').classList.add('active');
+                document.getElementById('btn-nature').className = "px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-md bg-green-700 text-white transform scale-105";
+            }
+        }
+    </script>
+
+</body>
+</html>
+```eof
